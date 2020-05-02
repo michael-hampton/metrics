@@ -1,0 +1,46 @@
+{
+    "type": "library",
+    "name": "michael_hampton/metrics",
+    "description": "Instrument your Laravel application with smart metrics",
+    "authors": [
+        {
+            "name": "Michael Hampton",
+            "email": "michaelhamptondesign@yahoo.com"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "illuminate/support": "^6|^7",
+        "spatie/test-time": "^1.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.5.0",
+        "mockery/mockery": "^1.2",
+        "orchestra/testbench": "^5.0.1",
+        "sempro/phpunit-pretty-print": "^1.0",
+        "doctrine/dbal": "^2"
+    },
+    "autoload": {
+        "psr-4": {
+            "robertogallea\\LaravelMetrics\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "robertogallea\\LaravelMetrics\\MetricsServiceProvider"
+            ],
+            "aliases": {
+                "Metrics": "robertogallea\\LaravelMetrics\\Facades\\Metrics"
+            }
+        }
+    }
+}
